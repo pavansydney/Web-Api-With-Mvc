@@ -1,0 +1,110 @@
+﻿@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    //Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div class="container-fluid">
+            <br />
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="container-fluid">
+                        <left>
+                            <h1 style="font-family:Century Gothic">E Cart</h1>
+                            <h5 style="font-family:Century Gothic">Welcome to Ecart Online Electronics Components Booking site</h5>
+                            <!--<div class="right">-->
+                            @*<img src="~/Images/ecart.jpg" style="width:50%">*@
+                            <!--</div>-->
+                            <div style="text-align:center">
+                                <div style="text-align:center">
+                                    <form method="post">
+                                        <table>
+                                            <tr>
+                                                @*<td><span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span>USERNAME</td>
+                                                    <td><input type="text" name="Username" value="@ViewBag.username" /></td>*@
+                                                <br />
+                                                <br />
+                                                <br />
+                                                <label>
+                                                    <i class="glyphicon glyphicon-user"></i>
+                                                    <b style="color:cornflowerblue">
+                                                        User Name
+                                                    </b>
+                                                </label>
+                                                <input type="text" name="Username" value="@ViewBag.username" />
+                                                <br>
+                                                <br>
+                                            </tr>
+                                            <tr>
+                                                @*<td><span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span>PASSWORD</td>
+                                                    <td><input type="password" name="Password" /></td>*@
+                                                <label>
+                                                    <i class="glyphicon glyphicon-eye-open"></i>
+                                                    <b style="color:cornflowerblue">
+                                                        Password
+                                                    </b>
+                                                </label>
+                                                <input type="password" name="Password" />
+                                                <br>
+                                                <br>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                @*<div style="text-align:center">
+                                                        <input style="text-align:center" type="submit" value="Login" />
+                                                    </div>*@
+                                                <div class="col-sm-12">
+                                                    <input type="submit" style="width:80px;color:dimgray" value="Login" class="btn btn-default" />
+                                                </div>
+
+                                            </tr>
+
+                                        </table>
+                                        <h5 style="font-family:Calibri; color:red">Enter your login credentials before you shop in our site</h5>
+                                        <div style="text-align:center">
+                                            Not a member yet ? <a href="@Url.Action("Index", "Registration")">Register Now</a>
+                                        </div>
+                                        @*<div style="text-align:center">
+                                            Click here if you are an administrator of this site ? <a href="@Url.Action("AdminIndex", "Admin")">Login as Admin</a>
+                                        </div>*@
+
+                                    </form>
+
+                                    @if (ViewBag.errorMessage != null)
+                                    {
+                                        <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span> <font color="red"> @ViewBag.errorMessage </font>
+                                    }
+
+                                    @if (@TempData["msg"] != null)
+                                    {
+                                        <script type="text/javascript">
+                                    window.alert("@TempData["msg"]");
+                                        </script>
+                                    }
+
+                                    @if (ViewBag.loginError != null)
+                                    {
+                                        <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span> <font color="red"> @ViewBag.loginError </font>
+                                    }
+
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
