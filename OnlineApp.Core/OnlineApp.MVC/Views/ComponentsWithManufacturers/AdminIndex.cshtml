@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "AdminIndex";
+}
+
+<h2>AdminIndex</h2>
+
+@{
+    ViewBag.Title = "Components With Manufacturers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 style="text-align:center">Ecart Components Website</h1>
+<h4>Components With Manufacturers</h4>
+
+@ViewBag.d
+<font color="green">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Welcome => @Session["usertype"]</font>
+<p>
+    <button type="button" onclick="location.href='@Url.Action("Create","Components")';"><span class="glyphicon glyphicon-credit-card"></span> Create New Component</button>
+    <button type="button" onclick="location.href='@Url.Action("Index", "Manufacturers")';"><span class="glyphicon glyphicon-user"></span>Manufacturers list</button>
+    <button type="button" onclick="location.href='@Url.Action("Logout", "ComponentsWithManufacturers")';"><span class="glyphicon glyphicon-user"></span>Logout</button>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Component ID
+        </th>
+        <th>
+            Component Name
+        </th>
+        <th>
+            Manufacturer Name
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.listComponentsWithManufacturers)
+    {
+        <tr>
+            <td>
+                @item.ComponentsWithManufacturer_Id
+            </td>
+            <td>
+                @item.ComponentsWithManufacturer_ComponentName
+
+            </td>
+            <td>
+                @item.ComponentsWithManufacturer_ManufacturerName
+            </td>
+            <td>
+                @item.Type
+            </td>
+            <td>
+                @item.Price
+            </td>
+
+            <td>
+                <a onclick="return confirm('Are you Sure ?')" href="@Url.Action("Delete","Components" , new { id = item.ComponentsWithManufacturer_Id })"><span class="glyphicon glyphicon-trash"></span> Delete Component</a>
+                <a href="@Url.Action("Edit","Components" , new { id = item.ComponentsWithManufacturer_Id })"><span class="glyphicon glyphicon-scissors"></span> Edit Component</a>
+                <a href="@Url.Action("AddToCart","Orders" , new { componentId = item.ComponentsWithManufacturer_Id })"><span class="glyphicon glyphicon-scissors"></span> Add to cart</a>
+
+            </td>
+        </tr>
+    }
+
+</table>
