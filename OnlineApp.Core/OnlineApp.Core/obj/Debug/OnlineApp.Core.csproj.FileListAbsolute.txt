@@ -1,0 +1,12 @@
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\OnlineApp.Core.dll.config
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\OnlineApp.Core.dll
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\OnlineApp.Core.pdb
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\EntityFramework.dll
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\EntityFramework.xml
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\obj\Debug\OnlineApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\obj\Debug\OnlineApp.Core.csproj.CopyComplete
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\obj\Debug\OnlineApp.Core.dll
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\obj\Debug\OnlineApp.Core.pdb
+C:\Users\chilakalapall.kalya\source\repos\OnlineApp.Core\OnlineApp.Core\obj\Debug\OnlineApp.Core.csprojAssemblyReference.cache
