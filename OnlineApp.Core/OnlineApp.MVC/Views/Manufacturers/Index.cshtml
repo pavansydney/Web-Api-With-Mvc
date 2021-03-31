@@ -1,0 +1,78 @@
+﻿@{ ViewBag.Title = "Manufacturers";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+
+<h4> All Manufacturers</h4>
+
+
+
+<p>
+    <button type="button"  onclick="location.href='@Url.Action("AdminIndex", "ComponentsWithManufacturers")';"><span class="glyphicon glyphicon-list-alt"></span> Component list </button>
+    <button type="button"  onclick="location.href='@Url.Action("Create", "Manufacturers")';"><span class="glyphicon glyphicon-plus"></span> Create a Manufacturer</button>
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Manufacturer ID
+        </th>
+        <th>
+            Manufacturer Name
+        </th>
+
+        <th>
+            Components Availability Status
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+
+
+    @foreach (var item in ViewBag.listManufacturers)
+    {
+<tr>
+    <td>
+        @item.Manufacturer_Id
+    </td>
+    <td>
+        @item.Manufacturer_Name
+
+
+
+    </td>
+
+    <td>
+
+
+
+        @if (item.IsAuthorized == "Y")
+        {
+
+
+
+<p><span class="glyphicon glyphicon-ok" style="color:lime"></span></p>}
+
+
+
+        @if (item.IsAuthorized == "N")
+        {
+<p><span class="glyphicon glyphicon-remove" style="color:deeppink"></span></p>}
+
+
+
+    </td>
+
+
+
+    <td>
+        <a  onclick="return confirm('Are you Sure ?')" href="@Url.Action("Delete","Manufacturers" , new { id = item.Manufacturer_Id })"><span class="glyphicon glyphicon-trash"></span> Delete Manufacturer</a>
+        <a  href="@Url.Action("Edit","Manufacturers" , new { id = item.Manufacturer_Id })"><span class="glyphicon glyphicon-scissors"></span> Edit Manufacturer</a>
+    </td>
+</tr>
+}
+</table>
