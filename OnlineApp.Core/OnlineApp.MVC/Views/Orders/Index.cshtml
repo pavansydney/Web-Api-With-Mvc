@@ -1,0 +1,61 @@
+﻿@model IEnumerable<OnlineApp.Core.Entities.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Continue Shopping", "ComponentsWithManufacturers","ComponentsWithMAnufacturers")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_ComponentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_ComponentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Order_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Order_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Order_Id })
+            </td>*@
+        </tr>
+    }
+
+</table>
+
+Total Cart Amount : @Model.Select(a => a.total).Sum()
+<a onclick="return confirm('Are you sure to place order ?')" href="@Url.Action("Index","Components" @*, new { id = item.ComponentsWithManufacturer_Id }*@)"><span class="glyphicon glyphicon-shopping-cart"></span>Order Now</a>
