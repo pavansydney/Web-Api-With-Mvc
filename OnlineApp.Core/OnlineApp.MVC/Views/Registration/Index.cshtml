@@ -1,0 +1,86 @@
+﻿@model OnlineApp.Core.Entities.User
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+
+            <legend style="text-align:center">
+                <i class="glyphicon glyphicon-user" style="text-align:center"></i>
+                User Registration Portal
+            </legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Username)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Username)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DateOfBirth)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DateOfBirth) Format : (MM/dd/YYYY)
+            </div>
+            <br />
+            <p>
+                <i class="glyphicon glyphicon-registration-mark"></i>
+                <input type="submit" value="Register" />
+                <div>
+                    <i class="glyphicon glyphicon-log-in"></i>
+                    <a href="@Url.Action("Index", "Login")">Back To Login</a>
+                </div>
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        <font color="red">
+
+            @Html.ValidationMessageFor(model => model.Username) <br />
+            @Html.ValidationMessageFor(model => model.Email) <br />
+            @Html.ValidationMessageFor(model => model.Password) <br />
+            @Html.ValidationMessageFor(model => model.DateOfBirth)
+            @ViewBag.errorMessage
+
+        </font>
+    </div>
+</body>
+</html>
